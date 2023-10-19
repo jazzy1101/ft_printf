@@ -24,10 +24,11 @@ t_print	*ft_init_set(t_print *set)
 	return (set);
 }
 
-int	ft_parse_str(const char *str, t_print *set, va_list ap)
+int	ft_parse_str(const char *str, va_list ap)
 {
 	int	i;
 	int num_print;
+	t_print	*set;
 
 	num_print = 0;
 	i = -1;
@@ -35,7 +36,11 @@ int	ft_parse_str(const char *str, t_print *set, va_list ap)
 	{
 		if (str[i] == '%')
 		{
-			num_print += ft_check_type(set, str, i, ap);
+			set = (t_print *)malloc(sizeof(t_print));
+			if (!set)
+				return (-1);
+			ft_init_set(set);
+			num_print += ft_print_holder(set, str, i + 1, ap);
 		}
 		else
 			num_print += write(1, &str[i], 1);
@@ -45,15 +50,11 @@ int	ft_parse_str(const char *str, t_print *set, va_list ap)
 int	ft_printf(const char *str, ...)
 {
 	int	res;
-	t_print	*set;
 	va_list	ap;
 
 	res = 0;
-	set = (t_print *)malloc(sizeof(t_print));
-	if (!set)
-		return (-1);
-	ft_init_set(set);
 	va_start(ap, str);
-	res = ft_parse_str(str, set, ap);
+	res = ft_parse_str(str, ap);
+	va_end(ap);
 	return (res);
 }
