@@ -18,18 +18,14 @@
 
 typedef	struct	s_print
 {
-	va_list	args;
-
 	int	n;
 	int	width;
 	int	preci;
-	int	len;
 	int	zero;
 	int	minus;
 	int	plus;
 	int	space;
 	int	hash;
-	int	point;
 }	t_print;
 
 

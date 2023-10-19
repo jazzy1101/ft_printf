@@ -9,35 +9,20 @@
 /*   Updated: 2023/10/18 11:19:06 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_printf.h"
 
-
-void	ft_check_flag(t_print *set, const char *str, int pos)
+int	ft_check_type(t_print *set, const char *str, int pos, va_list ap)
 {
-	while (!ft_strchr("cspdiuxX%", str[pos]))
-	{
-		if (str[pos] == '.')
-			set->point = 1;
-		if (str[pos] == '-')
-			set->minus = 1;
-		if (str[pos] == '#')
-			set->hash = 1;
-		if (str[pos] == '+')
-			set->plus
-
-	}
-}
-void	ft_check_type(t_print *set, const char *str, int pos)
-{
-	
+	ft_check_flag(set, str, pos, ap);
 	if (str[pos] == 'c')
-		ft_print_char(va_arg(set->args, char));
+		ft_print_char(va_arg(ap, int));
 	else if (str[pos] == 's')
-		ft_print_str(va_arg(set->args, const char*));
+		ft_print_str(va_arg(ap, const char *));
 	else if (str[pos] == 'p')
-		ft_print_pointer(va_arg(set->args, void*));
+		ft_print_pointer(va_arg(ap, void *));
 	else if (str[pos] == 'd' || str[pos] == 'i')
-		ft_print_int(va_arg(set->args, int));
+		ft_print_int(va_arg(ap, int));
 	else if (str[pos] == 'x' || str[pos] == 'X' || str[pos] == 'u')
-		ft_print_unsign_int(va_arg(set->args, unsigned int));
-	return ();
+		ft_print_unsign_int(va_arg(ap, unsigned int));
+	return (set->n);
 }
