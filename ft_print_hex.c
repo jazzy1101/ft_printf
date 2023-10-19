@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 17:10:57 by dabae             #+#    #+#             */
-/*   Updated: 2023/10/19 17:26:37 by dabae            ###   ########.fr       */
+/*   Created: 2023/10/19 17:13:03 by dabae             #+#    #+#             */
+/*   Updated: 2023/10/19 17:16:11 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_print_char(char c, t_print *set)
+int	ft_print_hex(unsigned int n, t_print *set, int capital)
 {
 
 }
