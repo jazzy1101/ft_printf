@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_print_unsigned(unsigned int n, t_print *set)
+void	ft_print_unsigned(unsigned int n, t_print *set)
 {
-	
+    
+
+
 }

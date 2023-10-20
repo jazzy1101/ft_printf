@@ -10,7 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_print_str(const char *str, t_print *set)
+void	ft_print_str(const char *str, t_print *set)
 {
+    int	i;
 
+	if (!str)
+		return ;
+	i = 0;
+	while (str[i])
+	{
+		set->n += write(1, &str[i], 1);
+		i++;
+	}
 }

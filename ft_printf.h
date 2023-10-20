@@ -16,13 +16,16 @@
 # include <stdlib.h>
 # include <string.h>
 
+# define HEX_UP "0123456789ABCDEF"
+# define HEX_LOW "0123456789abcdef"
+
 typedef	struct	s_print
 {
 	int	n;
 	int	width;
 	int	preci;
 	int	zero;
-	int	minus;
+	int	left;
 	int	plus;
 	int	space;
 	int	hash;

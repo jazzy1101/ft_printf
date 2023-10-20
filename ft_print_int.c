@@ -10,7 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_print_int(int n, t_print *set)
+void	ft_print_int(int n, t_print *set)
 {
-	
+    char    *arr;
+
+    arr = ft_itoa(n);
+    ft_print_str(arr, set);
 }

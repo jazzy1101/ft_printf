@@ -17,7 +17,7 @@ t_print	*ft_init_set(t_print *set)
 	set->width = 0;
 	set->preci = -1;
 	set->zero = 0;
-	set->minus = 0;
+	set->left = -1;
 	set->plus = 0;
 	set->space = 0;
 	set->hash = 0;
@@ -40,7 +40,8 @@ int	ft_parse_str(const char *str, va_list ap)
 			if (!set)
 				return (-1);
 			ft_init_set(set);
-			num_print += ft_print_holder(set, str, i + 1, ap);
+			ft_print_holder(set, str, i + 1, ap);
+			num_print += set->n;
 		}
 		else
 			num_print += write(1, &str[i], 1);

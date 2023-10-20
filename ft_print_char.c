@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_print_char(char c, t_print *set)
+void	ft_print_char(char c, t_print *set)
 {
-
+    set->n += write(1, &c, 1);
 }
